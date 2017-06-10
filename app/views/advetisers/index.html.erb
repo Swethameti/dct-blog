@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Advetisers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @advetisers.each do |advetiser| %>
+      <tr>
+        <td><%= advetiser.name %></td>
+        <td><%= link_to 'Show', advetiser %></td>
+        <td><%= link_to 'Edit', edit_advetiser_path(advetiser) %></td>
+        <td><%= link_to 'Destroy', advetiser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Advetiser', new_advetiser_path %>

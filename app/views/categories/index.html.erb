@@ -1,0 +1,31 @@
+<h2> Listing Categories : <%= @categories.length%></h2>
+
+
+<% if @categories.empty? %>
+<p> Categories have not been added yet</p>
+<% else %>
+
+<ol>
+
+<% @categories.each do |category| %>
+<li><%= category.name %></li>
+<% end %>
+
+
+<p>Static Content without erb</p>
+
+<li>Testing constant</li>
+<li>Category 1 </li>
+
+</ol>
+<% end %>
+
+
+<%= link_to "Add Category (ror best)", new_category_path, target: "_blank" %> | <!-- new_category_path return string "/categories/new" -->
+<%= link_to "Add Category (ror)", "/categories/new",target: "_blank"   %> |
+<a href="/categories/new" > Add Category  </a>
+<!-- comment in html -->
+<%# comment in .erb %>
+
+
+<%# link_to "Add Product", new_product_path %>
